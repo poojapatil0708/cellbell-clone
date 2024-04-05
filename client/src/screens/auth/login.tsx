@@ -1,21 +1,34 @@
-import { Box, Grid, GridItem, Text } from "@chakra-ui/react";
 import ChakraInput from "../../componants/input";
 
 const LogIn = () => {
     return (
-        <Grid h='100px' gap={4} p={5} >
-            <GridItem display="flex" justifyContent="center" colSpan={12}>
-                <Text fontSize='4xl'>Log In</Text>
-            </GridItem>
-            <GridItem p={5} colSpan={6} >
-                Login Form
-                <ChakraInput />
-                <ChakraInput />
-            </GridItem>
-            <GridItem display="flex" justifyContent="left" colSpan={6} >
-                New Customer? Register
-            </GridItem>
-        </Grid>
+        <div className="bg-light p-5" style={{height:"100vh"}} >
+            <div className="row row-cols-sm-2 row-cols-md-12 pb-5">
+                <div className="col-lg-12 p-2" >
+                    <h2 className="d-flex align-items-center justify-content-center" >Log In</h2>
+                </div>
+            </div>
+
+            <div className="row row-cols-sm-2 row-cols-md-12 pb-5">
+                <div className="col p-5" >
+                    <h4>Log In</h4>
+                    <ChakraInput placeholder="Google Login" />
+                    <ChakraInput placeholder="Facebook Login" />
+                    <ChakraInput placeholder="Amazone Login" />
+                    <ChakraInput placeholder="email" />
+                    <ChakraInput placeholder="Password" />
+                    <button type="submit" className="btn btn-primary" >LogIn</button>
+                </div>
+                <div className="col p-5">
+                    <h4>New Customer? Register</h4>
+                    <p>
+                        Sign up for early Sale access plus tailored new arrivals,
+                        trends and promotions. To opt out, click unsubscribe in our emails.
+                    </p>
+                    <button type="submit" className="btn btn-primary" >Register</button>
+                </div>
+            </div>
+        </div>
     );
 }
 
