@@ -1,10 +1,18 @@
-import { Box, Input } from "@chakra-ui/react";
+import { Box, Input, InputGroup, InputProps } from "@chakra-ui/react";
 
-const ChakraInput = ({ placeholder }: { placeholder: string }) => {
+interface CustomProps extends InputProps{
+    error?: any,
+    placeholder:string
+}
 
-    return(
+const ChakraInput = (props:CustomProps) => {
+
+
+    return (
         <Box display="flex" p={1} >
-            <Input placeholder={placeholder} />
+            <InputGroup size='md'>
+                <Input {...props} />
+            </InputGroup>
         </Box>
     );
 }

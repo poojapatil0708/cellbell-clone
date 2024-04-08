@@ -1,10 +1,8 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, ButtonProps } from "@chakra-ui/react";
 
-const ChakraButton = () => {
-    return(
-        <Box>
-            <Button></Button>
-        </Box>
+const ChakraButton = (props: ButtonProps) => {
+    return (
+            <Button size="sm" {...props} my={props.my || 3}  alignSelf="stretch" />
     );
 }
 
