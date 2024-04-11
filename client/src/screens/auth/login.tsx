@@ -3,8 +3,11 @@ import ChakraButton from "../../componants/button";
 import ChakraInput from "../../componants/input";
 import { User } from "../../constants/types";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const LogIn = () => {
+
+    const navigate = useNavigate();
 
     const initialValues: Partial<User> = {
         email: '',
@@ -40,12 +43,12 @@ const LogIn = () => {
                     )}
                 </Formik>
                 <div className="col p-5">
-                    <h4>New Customer? Register</h4>
-                    <p>
+                    <h4>New Customer</h4>
+                    <p style={{color:'gray'}} >
                         Sign up for early Sale access plus tailored new arrivals,
                         trends and promotions. To opt out, click unsubscribe in our emails.
                     </p>
-                    <button type="submit" className="btn btn-primary" >Register</button>
+                    <button type="submit" className="btn btn-primary" onClick={()=>navigate('/auth/register')} >Register</button>
                 </div>
             </div>
         </div>

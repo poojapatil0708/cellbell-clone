@@ -4,8 +4,11 @@ import ChakraButton from "../../componants/button";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { User } from "../../constants/types";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const initialValues: Partial<User> = {
         first_name: '',
@@ -21,7 +24,7 @@ const Register = () => {
         password: Yup.string().required()
     })
 
-    const onSubmit = (values:any) => {
+    const onSubmit = (values: any) => {
         console.log(values)
     }
 
@@ -36,7 +39,14 @@ const Register = () => {
                         <ChakraInput type="text" onChange={(e) => setFieldValue("last_name", e.target.value)} value={values.last_name} error={errors.last_name || ''} placeholder="Last Name" />
                         <ChakraInput type="text" onChange={(e) => setFieldValue("email", e.target.value)} value={values.email} error={errors.email || ''} placeholder="Email" />
                         <ChakraInput type="password" onChange={(e) => setFieldValue("password", e.target.value)} value={values.password} error={errors.password || ''} placeholder="Password" />
-                        <ChakraButton type="submit" alignSelf="stretch" onClick={()=> handleSubmit()} >Register</ChakraButton>
+                        <p style={{ color: 'gray' }} className="pt-4" >
+                            Sign up for early Sale access plus tailored new arrivals, trends and promotions.
+                            To opt out, click unsubscribe in our emails.
+                        </p>
+                        <Box display="flex" flexDirection="column">
+                            <ChakraButton type="submit" alignSelf="stretch" onClick={() => handleSubmit()} style={{backgroundColor:'black'}} className="" >Register</ChakraButton>
+                            <ChakraButton type="submit" onClick={() => navigate('/auth/login')} >Log In</ChakraButton>
+                        </Box>
                     </Box>
                 )}
             </Formik>
