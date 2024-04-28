@@ -1,4 +1,4 @@
-import { Box, Button, ButtonProps } from "@chakra-ui/react";
+import { Button, ButtonProps } from "@chakra-ui/react";
 
 const ChakraButton = (props: ButtonProps) => {
     return (

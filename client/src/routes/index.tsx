@@ -7,6 +7,7 @@ const IndexRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/" element={<Navigate to="/auth/login" />} />
                 <Route path="/" element={<Navbar />}>
                     <Route path="*" element={<Navigate to="/auth/login" />} />
                     <Route path="/auth/login" element={<LogIn />} />

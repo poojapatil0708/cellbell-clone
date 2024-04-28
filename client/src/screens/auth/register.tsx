@@ -44,7 +44,7 @@ const Register = () => {
                             To opt out, click unsubscribe in our emails.
                         </p>
                         <Box display="flex" flexDirection="column">
-                            <ChakraButton type="submit" alignSelf="stretch" onClick={() => handleSubmit()} style={{backgroundColor:'black'}} className="" >Register</ChakraButton>
+                            <ChakraButton type="submit" alignSelf="stretch" onClick={() => handleSubmit()} style={{backgroundColor:'black'}} className="text-white" >Register</ChakraButton>
                             <ChakraButton type="submit" onClick={() => navigate('/auth/login')} >Log In</ChakraButton>
                         </Box>
                     </Box>
